@@ -3,7 +3,7 @@ from __future__ import division, print_function
 import numpy as np
 import matplotlib.pyplot as plt
 
-import pyfits
+from astropy.io import fits as pyfits
 import glob
 
 from astropy.stats.funcs import median_absolute_deviation as MAD
@@ -101,12 +101,14 @@ def run_C0_data_extract(fn, second_half_only=True,
     ymax = np.max(np.where(lab == regnum)[0])
     xmin = np.min(np.where(lab == regnum)[1])
     xmax = np.max(np.where(lab == regnum)[1])
+    #print(np.where(lab == regnum))
     momlims = [ymin,ymax+1,xmin,xmax+1]
 
     for i,fl in enumerate(fluxarr):
         lc[i] = np.sum(fl[lab == regnum])
         momim = fl[momlims[0]:momlims[1],
                     momlims[2]:momlims[3]]
+        momim[~np.isfinite(momim)] == 0.0
         xbar[i], ybar[i], cov = intertial_axis(momim)
 
     if return_qual:
