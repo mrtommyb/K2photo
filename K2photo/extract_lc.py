@@ -30,11 +30,13 @@ def bg_sub(fla):
 
 def run_C0_data_extract(fn, second_half_only=True,
     qual_cut=False, return_qual=False, toss_resat=True,
-    bg_cut=5):
+    bg_cut=5, skip_cads=None):
 
     #for C0, lets just ise the good data post safe mode
-    if second_half_only:
+    if second_half_only and skip_cads = None:
         skip = 1976
+    elif skip is not None:
+        skip = skip_cads
     else:
         skip = 0
 
