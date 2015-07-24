@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from astropy.io import fits as pyfits
 
-from photutils.aperture import aperture_elliptical
+
+## from photutils.aperture import aperture_elliptical
 
 def raw_moment(data, iord, jord):
     nrows, ncols = data.shape
