@@ -2,7 +2,7 @@ from __future__ import division, print_function
 
 import numpy as np
 import matplotlib.pyplot as plt
-import pyfits
+from astropy.io import fits as pyfits
 
 from photutils.aperture import aperture_elliptical
 
