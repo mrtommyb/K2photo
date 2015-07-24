@@ -42,6 +42,8 @@ def plot_bars(x_bar, y_bar, cov, ax):
 def polyfit_iter(time,flux,order):
     pass
 
+
+"""
 if __name__ == '__main__':
     dirname = '/Users/tom/Projects/K2_science/Jan2014_preSafeMode/LC'
     filename = '/kplr060020058-2014020013418_lpd-targ.fits'
@@ -175,7 +177,7 @@ if __name__ == '__main__':
 
 
 
-
+"""
 
 
 
